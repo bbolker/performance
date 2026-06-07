@@ -13,8 +13,8 @@
 <link rel="manifest" href="../site.webmanifest">
 <!-- katex math --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><script src="../katex-auto.js"></script><script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/JetBrains_Mono-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/Roboto_Slab-0.4.10/font.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">performance</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.15.2.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.17.0.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -162,7 +162,7 @@ plots for the model under investigation.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://easystats.github.io/performance/">performance</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/check_model.html">check_model</a></span><span class="op">(</span><span class="va">m1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-4-1.png" width="100%" height="100%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-4-1.png" class="r-plt" alt="" width="100%" height="100%"></p>
 <p>Now let’s take a closer look for each plot. To do so, we ask
 <code><a href="../reference/check_model.html">check_model()</a></code> to return a single plot for each check,
 instead of arranging them in a grid. We can do so using the
@@ -183,7 +183,7 @@ p. 158</em>).</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># posterior predicive checks</span></span>
 <span><span class="va">diagnostic_plots</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-6-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-6-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p>The blue lines are simulated data based on the model, if the model
 were true and distributional assumptions met. The green line represents
 the actual observed data of the response variable.</p>
@@ -199,7 +199,7 @@ distributional assumption of a linear model.</p>
 <span><span class="va">m2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">skewed</span> <span class="op">~</span> <span class="va">Species</span> <span class="op">+</span> <span class="va">Petal.Length</span> <span class="op">+</span> <span class="va">Petal.Width</span>, data <span class="op">=</span> <span class="va">d</span><span class="op">)</span></span>
 <span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_predictions.html">check_predictions</a></span><span class="op">(</span><span class="va">m2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">out</span><span class="op">)</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-7-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-7-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p>As you can see, the green line in this plot deviates visibly from the
 blue lines. This may indicate that our linear model is not appropriate,
 since it does not capture the distributional nature of the response
@@ -235,7 +235,7 @@ observed, error bars for replicated outcomes) or
 <span><span class="op">)</span></span>
 <span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/check_predictions.html">check_predictions</a></span><span class="op">(</span><span class="va">m3</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">out</span>, type <span class="op">=</span> <span class="st">"discrete_both"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-8-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-8-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 </div>
 </div>
 <div class="section level3">
@@ -249,7 +249,7 @@ specification seems to be ok.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># linearity</span></span>
 <span><span class="va">diagnostic_plots</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-9-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-9-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p>Now to a different example, where we simulate data with a quadratic
 relationship of one of the predictors and the outcome.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
@@ -265,7 +265,7 @@ relationship of one of the predictors and the outcome.</p>
 <span></span>
 <span><span class="co"># linearity plot</span></span>
 <span><span class="va">out</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-10-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-10-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <div class="section level4">
 <h4 id="how-to-fix-this-1">How to fix this?<a class="anchor" aria-label="anchor" href="#how-to-fix-this-1"></a>
 </h4>
@@ -281,7 +281,7 @@ linearity assumptions are not met.</p>
 <span></span>
 <span><span class="co"># linearity plot</span></span>
 <span><span class="va">out</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-11-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-11-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p><strong>Some caution is needed</strong> when interpreting these
 plots. Although these plots are helpful to check model assumptions, they
 do not necessarily indicate so-called “lack of fit”, e.g. missed
@@ -314,7 +314,7 @@ heteroscedasticity.</p>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">d</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, colour <span class="op">=</span> <span class="va">grp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="external-link">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-12-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-12-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p>For our example model, we see that our model indeed violates the
 assumption of homoscedasticity.</p>
 <p>But why does the diagnostic plot used in <code><a href="../reference/check_model.html">check_model()</a></code>
@@ -327,7 +327,7 @@ heteroscedasticity.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># homoscedasticiy - homogeneity of variance</span></span>
 <span><span class="va">diagnostic_plots</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-13-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-13-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <div class="section level4">
 <h4 id="how-to-fix-this-2">How to fix this?<a class="anchor" aria-label="anchor" href="#how-to-fix-this-2"></a>
 </h4>
@@ -365,7 +365,7 @@ observation.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># influential observations - outliers</span></span>
 <span><span class="va">diagnostic_plots</span><span class="op">[[</span><span class="fl">4</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-14-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-14-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p>In our example, everything looks well.</p>
 <div class="section level4">
 <h4 id="how-to-fix-this-3">How to fix this?<a class="anchor" aria-label="anchor" href="#how-to-fix-this-3"></a>
@@ -389,50 +389,83 @@ retained.</p>
 <div class="section level3">
 <h3 id="multicollinearity">Multicollinearity<a class="anchor" aria-label="anchor" href="#multicollinearity"></a>
 </h3>
-<p>This plot checks for potential collinearity among predictors. In a
-nutshell multicollinearity means that once you know the effect of one
-predictor, the value of knowing the other predictor is rather low.
-Multicollinearity might arise when a third, unobserved variable has a
-causal effect on each of the two predictors that are associated with the
-outcome. In such cases, the actual relationship that matters would be
-the association between the unobserved variable and the outcome.</p>
-<p>Multicollinearity should not be confused with a raw strong
-correlation between predictors. What matters is the association between
-one or more predictor variables, <em>conditional on the other variables
-in the model</em>.</p>
-<p>If multicollinearity is a problem, the model seems to suggest that
-the predictors in question don’t seems to be reliably associated with
-the outcome (low estimates, high standard errors), although these
-predictors actually are strongly associated with the outcome,
-i.e. indeed might have strong effect (<em>McElreath 2020, chapter
-6.1</em>).</p>
+<p>This plot checks for potential collinearity among predictors.
+Multicollinearity occurs when predictor variables are highly correlated
+with each other, conditional on the other variables in the model. In
+other words, the information one predictor provides about the outcome is
+redundant in the presence of the other predictors. This should not be
+confused with simple pairwise correlation between predictors; what
+matters is the association between predictors <em>after accounting for
+all other variables in the model</em>.</p>
+<p>Multicollinearity can arise when a third, unobserved variable
+causally affects multiple predictors that are associated with the
+outcome. When multicollinearity is present, the model may show that
+individual predictors do not appear reliably associated with the outcome
+(yielding low estimates and high standard errors), even when these
+predictors are actually strongly related to the outcome (<em>McElreath
+2020, chapter 6.1</em>).</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># multicollinearity</span></span>
 <span><span class="va">diagnostic_plots</span><span class="op">[[</span><span class="fl">5</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-15-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-15-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p>The variance inflation factor (VIF) indicates the magnitude of
-multicollinearity of model terms. The thresholds for low, moderate and
-high collinearity are VIF values less than 5, between 5 and 10 and
-larger than 10, respectively (<em>James et al. 2013</em>). Note that
-these thresholds, although commonly used, are also criticized for being
-too high. <em>Zuur et al. (2010)</em> suggest using lower values, e.g. a
-VIF of 3 or larger may already no longer be considered as “low”.</p>
-<p>Our model clearly suffers from multicollinearity, as all predictors
-have high VIF values.</p>
+multicollinearity of model terms. Common thresholds suggest that VIF
+values less than 5 indicate low collinearity, values between 5 and 10
+indicate moderate collinearity, and values larger than 10 indicate high
+collinearity (<em>James et al. 2013</em>). However, these thresholds
+have been criticized for being too lenient. <em>Zuur et al. (2010)</em>
+suggest using stricter criteria, where a VIF of 3 or larger may warrant
+concern. That said, VIF thresholds should be interpreted cautiously and
+in context (<em>O’Brien 2007</em>).</p>
+<p>Our model clearly shows multicollinearity, as all predictors have
+high VIF values.</p>
 <div class="section level4">
-<h4 id="how-to-fix-this-4">How to fix this?<a class="anchor" aria-label="anchor" href="#how-to-fix-this-4"></a>
+<h4 id="how-to-interpret-and-address-this">How to interpret and address this?<a class="anchor" aria-label="anchor" href="#how-to-interpret-and-address-this"></a>
 </h4>
-<p>Usually, predictors with (very) high VIF values should be removed
-from the model to fix multicollinearity. Some caution is needed for
-interaction terms. If interaction terms are included in a model, high
-VIF values are expected. This portion of multicollinearity among the
-component terms of an interaction is also called “inessential
-ill-conditioning”, which leads to inflated VIF values that are typically
-seen for models with interaction terms <em>(Francoeur 2013)</em>. In
-such cases, try centering the involved interaction terms, which can
-reduce multicollinearity <em>(Kim and Jung 2024)</em>, or re-fit your
-model without interaction terms and check this model for collinearity
-among predictors.</p>
+<p>High VIF values indicate that coefficient estimates may be unstable
+and have inflated standard errors. However, <strong>removing predictors
+with high VIF values is generally not recommended</strong> as a blanket
+solution (<em>Vanhove 2021; Morrissey and Ruxton 2018; Gregorich et
+al. 2021</em>). Multicollinearity is primarily a concern for
+<em>interpretation</em> of individual coefficients, not for the model’s
+overall predictive performance or for drawing inferences about the
+combined effects of correlated predictors.</p>
+<p>Consider these points when dealing with multicollinearity:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>If your goal is prediction</strong>, multicollinearity is
+typically not a problem. The model can still make accurate predictions
+even when predictors are highly correlated (<em>Feng et al. 2019; Graham
+2003</em>).</p></li>
+<li>
+<p><strong>If your goal is to interpret individual
+coefficients</strong>, high VIF values signal that you should be
+cautious. The coefficients represent the effect of each predictor while
+holding all others constant, which may not be meaningful when predictors
+are strongly related. In such cases, consider:</p>
+<ul>
+<li>Interpreting coefficients jointly rather than individually</li>
+<li>Acknowledging the uncertainty in individual coefficient
+estimates</li>
+<li>Considering whether your research question truly requires separating
+the effects of correlated predictors</li>
+</ul>
+</li>
+<li><p><strong>For interaction terms</strong>, high VIF values are
+expected and often unavoidable. This is sometimes called “inessential
+ill-conditioning” (<em>Francoeur 2013</em>). Centering the component
+variables can sometimes help reduce VIF values for interactions (<em>Kim
+and Jung 2024</em>).</p></li>
+<li><p><strong>Consider the substantive context</strong>: Sometimes,
+multicollinearity reflects important aspects of your data or research
+question. Removing variables to reduce VIF may actually harm your
+analysis by omitting important confounders or by changing the
+interpretation of remaining coefficients (<em>Gregorich et
+al. 2021</em>).</p></li>
+</ol>
+<p>Rather than automatically removing predictors, focus on whether
+multicollinearity prevents you from answering your specific research
+question, and whether the instability in coefficient estimates is
+acceptable given your goals.</p>
 </div>
 </div>
 <div class="section level3">
@@ -451,14 +484,14 @@ inaccurate.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># normally distributed residuals</span></span>
 <span><span class="va">diagnostic_plots</span><span class="op">[[</span><span class="fl">6</span><span class="op">]</span><span class="op">]</span></span></code></pre></div>
-<p><img src="check_model_files/figure-html/unnamed-chunk-16-1.png" width="80%" height="80%"></p>
+<p><img src="check_model_files/figure-html/unnamed-chunk-16-1.png" class="r-plt" alt="" width="80%" height="80%"></p>
 <p>In our example, we see that most data points are ok, except some
 observations at the tails. Whether any action is needed to fix this or
 not can also depend on the results of the remaining diagnostic plots. If
 all other plots indicate no violation of assumptions, some deviation of
 normality, particularly at the tails, can be less critical.</p>
 <div class="section level4">
-<h4 id="how-to-fix-this-5">How to fix this?<a class="anchor" aria-label="anchor" href="#how-to-fix-this-5"></a>
+<h4 id="how-to-fix-this-4">How to fix this?<a class="anchor" aria-label="anchor" href="#how-to-fix-this-4"></a>
 </h4>
 <p>Here are some remedies to fix non-normality of residuals, according
 to <em>Pek et al. 2018</em>.</p>
@@ -488,6 +521,9 @@ for Zero-inflated Generalized Linear Mixed Modeling. The R Journal.
 Technometrics. 1977;19(1): 15-18.</p>
 <p>Cook RD and Weisberg S. Residuals and Influence in Regression.
 London: Chapman and Hall, 1982.</p>
+<p>Feng X, Park DS, Liang Y, Pandey R, Papeş M. Collinearity in
+Ecological Niche Modeling: Confusions and Challenges. Ecology and
+Evolution. 2019;9(18):10365-76. <a href="doi:10.1002/ece3.5555" class="uri">doi:10.1002/ece3.5555</a></p>
 <p>Francoeur RB. Could Sequential Residual Centering Resolve Low
 Sensitivity in Moderated Regression? Simulations and Cancer Symptom
 Clusters. Open Journal of Statistics. 2013:03(06), 24-44.</p>
@@ -498,6 +534,12 @@ Bayesian data analysis. (Third edition). CRC Press, 2014</p>
 <p>Gelman A, and Hill J. Data analysis using regression and
 multilevel/hierarchical models. Cambridge; New York. Cambridge
 University Press, 2007</p>
+<p>Graham MH. Confronting Multicollinearity in Ecological Multiple
+Regression. Ecology. 2003;84(11):2809-15. <a href="doi:10.1890/02-3114" class="uri">doi:10.1890/02-3114</a></p>
+<p>Gregorich M, Strohmaier S, Dunkler D, Heinze G. Regression with
+Highly Correlated Predictors: Variable Omission Is Not the Solution.
+International Journal of Environmental Research and Public Health.
+2021;18(8):4259. <a href="doi:10.3390/ijerph18084259" class="uri">doi:10.3390/ijerph18084259</a></p>
 <p>James, G., Witten, D., Hastie, T., and Tibshirani, R. (eds.).An
 introduction to statistical learning: with applications in R. New York:
 Springer, 2013</p>
@@ -509,9 +551,16 @@ and Manage Univariate and Multivariate Outliers, With Emphasis on
 Pre-Registration. International Review of Social Psychology, 2019</p>
 <p>McElreath, R. Statistical rethinking: A Bayesian course with examples
 in R and Stan. 2nd edition. Chapman and Hall/CRC, 2020</p>
+<p>Morrissey MB, Ruxton GD. Multiple Regression Is Not Multiple
+Regressions: The Meaning of Multiple Regression and the Non-Problem of
+Collinearity. Philosophy, Theory, and Practice in Biology. 2018;10. <a href="doi:10.3998/ptpbio.16039257.0010.003" class="uri">doi:10.3998/ptpbio.16039257.0010.003</a></p>
+<p>O’Brien RM. A Caution Regarding Rules of Thumb for Variance Inflation
+Factors. Quality &amp; Quantity. 2007;41(5):673-90. <a href="doi:10.1007/s11135-006-9018-6" class="uri">doi:10.1007/s11135-006-9018-6</a></p>
 <p>Pek J, Wong O, Wong ACM. How to Address Non-normality: A Taxonomy of
 Approaches, Reviewed, and Illustrated. Front Psychol (2018) 9:2104. doi:
 10.3389/fpsyg.2018.02104</p>
+<p>Vanhove J. Collinearity Isn’t a Disease That Needs Curing.
+Meta-Psychology. 2021;5(April). <a href="doi:10.15626/MP.2021.2548" class="uri">doi:10.15626/MP.2021.2548</a></p>
 <p>Zuur AF, Ieno EN, Elphick CS. A protocol for data exploration to
 avoid common statistical problems: Data exploration. Methods in Ecology
 and Evolution (2010) 1:3-14.</p>
@@ -523,11 +572,11 @@ and Evolution (2010) 1:3-14.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by <a href="https://github.com/strengejacke" class="external-link">Daniel Lüdecke</a>, <a href="https://dominiquemakowski.github.io/" class="external-link">Dominique Makowski</a>, <a href="https://home.msbstats.info/" class="external-link">Mattan S. Ben-Shachar</a>, <a href="https://sites.google.com/site/indrajeetspatilmorality/" class="external-link">Indrajeet Patil</a>, Philip Waggoner, <a href="https://wiernik.org/" class="external-link">Brenton M. Wiernik</a>, <a href="https://remi-theriault.com/" class="external-link">Rémi Thériault</a>.</p>
+  <p>Developed by <a href="https://github.com/strengejacke" class="external-link">Daniel Lüdecke</a>, <a href="https://dominiquemakowski.github.io/" class="external-link">Dominique Makowski</a>, <a href="https://home.msbstats.info/" class="external-link">Mattan S. Ben-Shachar</a>, <a href="https://www.indrapatil.com/" class="external-link">Indrajeet Patil</a>, Philip Waggoner, <a href="https://wiernik.org/" class="external-link">Brenton M. Wiernik</a>, <a href="https://remi-theriault.com/" class="external-link">Rémi Thériault</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.9000.</p>
 </div>
 
     </footer>
